@@ -1,0 +1,47 @@
+set VENUES := V1 V2 V3 V4 V5 V6 V7 V8 V9 V10;
+set SPORTS := S1 S2 S3 S4 S5 S6 S7 S8 S9 S10 S11 S12 S13 S14 S15;
+set WEEKS  := 1 2 3;
+
+param cost :=
+    V1  500    V2  500    V3  400    V4  400    V5  350
+    V6  350    V7  300    V8  250    V9  300    V10 250;
+
+param capacity :=
+    V1  70     V2  90     V3  20     V4  27     V5  12
+    V6  10     V7  11     V8  8      V9  17     V10 8;
+
+param max_sports :=
+    V1  3   V2  3   V3  3   V4  2   V5  2
+    V6  2   V7  2   V8  2   V9  2   V10 2;
+
+param venue_order :=
+    V1 1  V2 2  V3 3  V4 4  V5 5
+    V6 6  V7 7  V8 8  V9 9  V10 10;
+
+param demand :=
+    S1  27    S2  13.5  S3  8.1   S4  28.8  S5  8.1
+    S6  7.2   S7  6.3   S8  4.5   S9  9     S10 10.8
+    S11 18    S12 5.4   S13 3.6   S14 7.2   S15 9;
+
+param sessions :=
+    S1  2    S2  1    S3  2    S4  2    S5  2
+    S6  1    S7  1    S8  1    S9  1    S10 1
+    S11 1    S12 1    S13 1    S14 1    S15 1;
+
+param eligible :
+            V1  V2  V3  V4  V5  V6  V7  V8  V9  V10 :=
+    S1       1   1   0   0   0   0   0   0   0   0
+    S2       0   0   0   0   1   1   0   0   0   0
+    S3       0   0   1   0   1   0   0   0   1   0
+    S4       1   1   0   1   0   0   0   0   0   0
+    S5       0   0   1   1   0   0   0   0   1   0
+    S6       0   0   0   0   0   1   1   0   1   0
+    S7       0   0   0   0   0   1   1   0   0   1
+    S8       0   0   0   0   0   0   0   1   0   1
+    S9       0   0   0   1   0   0   0   0   0   1
+    S10      0   0   1   0   1   0   0   0   1   0
+    S11      1   1   0   0   0   0   0   0   0   0
+    S12      0   0   0   0   0   0   0   1   0   1
+    S13      0   0   0   0   0   0   0   1   0   0
+    S14      0   1   0   0   0   0   0   0   0   0
+    S15      0   0   0   0   0   0   1   0   0   0;
